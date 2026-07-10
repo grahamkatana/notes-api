@@ -1,0 +1,13 @@
+http://localhost:3000
+
+###
+POST http://localhost:3000/api/signup
+Content-Type: application/json
+
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "this73838101@securedBig",
+    "confirm_password": "this73838101@securedBig"
+}
