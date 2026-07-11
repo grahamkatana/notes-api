@@ -7,7 +7,17 @@ Content-Type: application/json
 
 {
     "name": "John Doe",
-    "email": "john.doe2@example.com",
+    "email": "john.doe22@example.com",
     "password": "this73838101@securedBig",
     "confirm_password": "this73838101@securedBig"
+}
+
+###
+POST http://localhost:3000/api/signin
+Content-Type: application/json
+
+
+{
+    "email": "john.doe22444@example.com",
+    "password": "this73838101@securedBig"
 }

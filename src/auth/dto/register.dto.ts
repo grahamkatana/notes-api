@@ -40,3 +40,16 @@ export class RegisterResponseDto {
         updatedAt: Date;
     };
 }
+
+export class LoginDto {
+    @IsEmail()
+    @IsNotEmpty()
+    email?: string;
+
+    @IsString()
+    @IsNotEmpty()
+    password?: string;
+}
+
+export class LoginResponseDto extends RegisterResponseDto {
+}
