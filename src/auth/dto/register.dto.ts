@@ -30,4 +30,13 @@ export class RegisterDto {
 
 export class RegisterResponseDto {
     message?: string;
+    token?: string;
+    user?: {
+        id: number;
+        name: string;
+        email: string;
+        verifiedAt: Date | null;
+        createdAt: Date;
+        updatedAt: Date;
+    };
 }
