@@ -18,6 +18,39 @@ Content-Type: application/json
 
 
 {
-    "email": "john.doe22444@example.com",
+    "email": "john.doe22@example.com",
     "password": "this73838101@securedBig"
 }
+
+
+### 
+POST http://localhost:3000/api/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDIyNDMzMywiZXhwIjoxNzg0MjI3OTMzfQ.e-yhCFPVhButPbTUJctzFF_6GXEUYCBm2E4c70-gLqs 
+
+{
+    "title": "My First Note",
+    "content": "This is the content of my first note."
+}
+
+###
+GET http://localhost:3000/api/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDIyNDMzMywiZXhwIjoxNzg0MjI3OTMzfQ.e-yhCFPVhButPbTUJctzFF_6GXEUYCBm2E4c70-gLqs
+
+###
+PATCH http://localhost:3000/api/notes/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDIyNDMzMywiZXhwIjoxNzg0MjI3OTMzfQ.e-yhCFPVhButPbTUJctzFF_6GXEUYCBm2E4c70-gLqs
+
+{
+    "title": "Updated Note Title",
+    "content": "This is the updated content of my note."
+}
+
+
+### 
+DELETE http://localhost:3000/api/notes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDIyNDMzMywiZXhwIjoxNzg0MjI3OTMzfQ.e-yhCFPVhButPbTUJctzFF_6GXEUYCBm2E4c70-gLqs
+
+
+

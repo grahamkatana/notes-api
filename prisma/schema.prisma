@@ -22,4 +22,17 @@ model User {
   verifiedAt DateTime?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  Note     Note[]
+}
+
+
+model Note {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  user User     @relation(fields: [userId], references: [id])
+  userId    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
