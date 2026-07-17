@@ -1,4 +1,4 @@
-import { Injectable, Request } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateNoteDto } from './dto/create-note.dto';
 import { UpdateNoteDto } from './dto/update-note.dto';
 import { PrismaService } from 'src/prisma.service';
@@ -6,6 +6,7 @@ import { PrismaService } from 'src/prisma.service';
 @Injectable()
 export class NoteService {
   constructor(private readonly prismService: PrismaService) {}
+
   async create(createNoteDto: CreateNoteDto, userId: number) {
     return await this.prismService.note.create({
       data: {
@@ -13,33 +14,57 @@ export class NoteService {
         content: createNoteDto.content!,
         userId: userId,
       },
-    })
-   
+    });
   }
 
-  async findAll(userId: number) {
+  async findAll({ take, skip }: { take?: number; skip?: number }, userId: number) {
     return await this.prismService.note.findMany({
       where: {
         userId: userId,
       },
+      take: take,
+      skip: skip,
     });
   }
 
   async findOne(id: number, userId: number) {
-    return await this.prismService.note.findUnique({
+    const note = await this.prismService.note.findUnique({
       where: {
         id: id,
-        userId: userId,
       },
     });
-  }   
-  
+
+    if (!note) {
+      throw new NotFoundException(`Note with ID ${id} not found`);
+    }
+
+    if (note.userId !== userId) {
+      throw new NotFoundException(`Note with ID ${id} not found for this user`);
+    }
+
+    return note;
+  }
 
   async update(id: number, updateNoteDto: UpdateNoteDto, userId: number) {
+    // First verify the note exists and belongs to the user
+    const existingNote = await this.prismService.note.findUnique({
+      where: {
+        id: id,
+      },
+    });
+
+    if (!existingNote) {
+      throw new NotFoundException(`Note with ID ${id} not found`);
+    }
+
+    if (existingNote.userId !== userId) {
+      throw new NotFoundException(`Note with ID ${id} not found for this user`);
+    }
+
+    // Now safe to update
     return await this.prismService.note.update({
       where: {
         id: id,
-        userId: userId,
       },
       data: {
         title: updateNoteDto.title,
@@ -49,10 +74,24 @@ export class NoteService {
   }
 
   async remove(id: number, userId: number) {
+    // Verify the note exists and belongs to the user before deleting
+    const existingNote = await this.prismService.note.findUnique({
+      where: {
+        id: id,
+      },
+    });
+
+    if (!existingNote) {
+      throw new NotFoundException(`Note with ID ${id} not found`);
+    }
+
+    if (existingNote.userId !== userId) {
+      throw new NotFoundException(`Note with ID ${id} not found for this user`);
+    }
+
     return await this.prismService.note.delete({
       where: {
         id: id,
-        userId: userId,
       },
     });
   }

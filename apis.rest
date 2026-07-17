@@ -26,7 +26,7 @@ Content-Type: application/json
 ### 
 POST http://localhost:3000/api/notes
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDIyNDMzMywiZXhwIjoxNzg0MjI3OTMzfQ.e-yhCFPVhButPbTUJctzFF_6GXEUYCBm2E4c70-gLqs 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDMxMTM1MCwiZXhwIjoxNzg0MzE0OTUwfQ.b60F6RNoIM6p1GrZ6HAFIxXKwKWoTINQSnKpyHdS_fc
 
 {
     "title": "My First Note",
@@ -35,12 +35,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsI
 
 ###
 GET http://localhost:3000/api/notes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDIyNDMzMywiZXhwIjoxNzg0MjI3OTMzfQ.e-yhCFPVhButPbTUJctzFF_6GXEUYCBm2E4c70-gLqs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDMxMTM1MCwiZXhwIjoxNzg0MzE0OTUwfQ.b60F6RNoIM6p1GrZ6HAFIxXKwKWoTINQSnKpyHdS_fc
 
 ###
 PATCH http://localhost:3000/api/notes/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDIyNDMzMywiZXhwIjoxNzg0MjI3OTMzfQ.e-yhCFPVhButPbTUJctzFF_6GXEUYCBm2E4c70-gLqs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDMxMTM1MCwiZXhwIjoxNzg0MzE0OTUwfQ.b60F6RNoIM6p1GrZ6HAFIxXKwKWoTINQSnKpyHdS_fc
 
 {
     "title": "Updated Note Title",
@@ -50,7 +50,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsI
 
 ### 
 DELETE http://localhost:3000/api/notes/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDIyNDMzMywiZXhwIjoxNzg0MjI3OTMzfQ.e-yhCFPVhButPbTUJctzFF_6GXEUYCBm2E4c70-gLqs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiam9obi5kb2UyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc4NDMxMTM1MCwiZXhwIjoxNzg0MzE0OTUwfQ.b60F6RNoIM6p1GrZ6HAFIxXKwKWoTINQSnKpyHdS_fc
 
 
 
